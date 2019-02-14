@@ -5,6 +5,7 @@
 [Bb]uilds/
 [Ll]ogs/
 App/
+App-Client/
 
 # Never ignore Asset meta data
 ![Aa]ssets/**/*.meta
