@@ -8,10 +8,13 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Simple Multiplayer/simplemultiplayer.unity
     guid: 569946ab9a674894b8faec71e9ca42bb
-  - enabled: 1
+  - enabled: 0
     path: Assets/multi.unity
     guid: e747a7e27e99bdf4d9dc1bb2b193f20c
   - enabled: 0
     path: Assets/solo.unity
     guid: cd590c8347ff85947a93feb0ffb162ba
+  - enabled: 1
+    path: Assets/Photon Multiplayer/multiPhoton.unity
+    guid: d33fc443ac409624ca3b44e6e48b2314
   m_configObjects: {}
