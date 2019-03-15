@@ -34,7 +34,8 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         // In a room, spawn a character for the local player. it gets synced by
         // using PhotonNetwork.Instantiate
         Debug.Log("Spawning player");
-        PhotonNetwork.Instantiate(this.playerPrefab.name, new Vector3(0f,5f,0f), Quaternion.identity, 0);
+        Vector3 spawnLoc = new Vector3(Random.Range(-3.0f, 3.0f),0.5f,Random.Range(-3.0f, 3.0f));
+        PhotonNetwork.Instantiate(this.playerPrefab.name, spawnLoc, Quaternion.identity, 0);
     }
 
     public override void OnPlayerEnteredRoom( Player other  )
