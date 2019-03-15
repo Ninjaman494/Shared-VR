@@ -44,15 +44,17 @@ public class AugmentedImageVisualizer : MonoBehaviour
     /// </summary>
     public void Update()
     {
-        if (Image == null || Image.TrackingState != TrackingState.Tracking)
+        /*if (Image == null || Image.TrackingState != TrackingState.Tracking)
         {
             hand.SetActive(false);
             return;
-        }
-
+        }*/
+        Debug.Log("Update in Augmented Image");
+        Debug.Log("Original hand:" + hand.transform.localPosition);
         float halfWidth = Image.ExtentX / 2;
         float halfHeight = Image.ExtentZ / 2;
         hand.transform.localPosition = (halfWidth * Vector3.left) + (halfHeight * Vector3.back);
         hand.SetActive(true);
+        Debug.Log("New hand: " + hand.transform.localPosition);
     }
 }

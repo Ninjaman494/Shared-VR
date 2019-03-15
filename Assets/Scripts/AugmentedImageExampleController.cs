@@ -57,12 +57,14 @@ public class AugmentedImageExampleController : MonoBehaviour
         // Check that motion tracking is tracking.
         if (Session.Status != SessionStatus.Tracking)
         {
+            Debug.Log("Wrong Session");
             return;
         }
 
         // Get updated augmented images for this frame.
         Session.GetTrackables<AugmentedImage>(m_TempAugmentedImages, TrackableQueryFilter.Updated);
 
+        Debug.Log("# of trackables:" + m_TempAugmentedImages.Count);
         // Create visualizers and anchors for updated augmented images that are tracking and do not previously
         // have a visualizer. Remove visualizers for stopped images.
         foreach (var image in m_TempAugmentedImages)
@@ -82,6 +84,11 @@ public class AugmentedImageExampleController : MonoBehaviour
                 m_Visualizers.Remove(image.DatabaseIndex);
                 GameObject.Destroy(visualizer.gameObject);
             }
+        }
+
+
+        if(FitToScanOverlay == null){
+            return;
         }
 
         // Show the fit-to-scan overlay if there are no images that are Tracking.

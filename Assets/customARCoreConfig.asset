@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: customARCoreConfig
   m_EditorClassIdentifier: 
   MatchCameraFramerate: 1
-  PlaneFindingMode: 2
+  PlaneFindingMode: 0
   EnableLightEstimation: 1
   EnableCloudAnchor: 0
   AugmentedImageDatabase: {fileID: 11400000, guid: 6ee08e6950cc2eb47b7cb925718e7e2b,
     type: 2}
-  CameraFocusMode: 1
+  CameraFocusMode: 0
   AugmentedFaceMode: 0
