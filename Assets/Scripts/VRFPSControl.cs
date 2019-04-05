@@ -13,8 +13,12 @@ public class VRFPSControl : MonoBehaviour {
     public float maximumY = 60F;
 
     float rotationY = 0F;
+    float startingY = 1.125F;
 
     void Update() {
+        // Maintain head position
+        head.transform.Translate(new Vector3(0, startingY, 0)); 
+
         float rotationX = head.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
         rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
         rotationY = Mathf.Clamp (rotationY, minimumY, maximumY);
