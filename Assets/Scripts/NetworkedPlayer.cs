@@ -9,6 +9,7 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks
 {
     public Camera camera;
     public TrackedPoseDriver TrackedPoseDriver;
+    public VRFPSControl fpsControlScript;
 
     void Awake()
     {
@@ -22,18 +23,20 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks
         {
             TrackedPoseDriver.enabled = false;
             camera.enabled = false;
+            fpsControlScript.enabled = false;
         }
         else
         {
             TrackedPoseDriver.enabled = true;
             camera.enabled = true;
+            fpsControlScript.enabled = true;
         }
 
     }
 
     void Update()
     {
-        if(photonView.IsMine == true && PhotonNetwork.IsConnected == true)
+        /* if(photonView.IsMine == true && PhotonNetwork.IsConnected == true)
         {
             if(Input.GetKey(KeyCode.D))
                     gameObject.transform.Translate(Vector3.right * Time.deltaTime * 3f);
@@ -43,6 +46,6 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks
                     gameObject.transform.Translate(Vector3.back * Time.deltaTime * 3f);
             if(Input.GetKey(KeyCode.W))
                     gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 3f);
-        }
+        } */
     }
 }
