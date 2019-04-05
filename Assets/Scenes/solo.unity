@@ -292,12 +292,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095568705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75e1185e5c434cf4e8afd27d9f1ad147, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e4a19df815cec849854c34cf8f09ba0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cam: {fileID: 762058234981773189}
-  poseDriver: {fileID: 124546171762277859}
+  head: {fileID: 762058234981773189}
   sensitivity: 2
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumY: -60
+  maximumY: 60
 --- !u!1001 &781074293
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -605,18 +608,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ce7abbbeb276a1547bd8ce1069fdabb7, type: 3}
---- !u!114 &124546171762277859 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 124546170709831870, guid: e477844594449984bb78335c3e065238,
-    type: 3}
-  m_PrefabInstance: {fileID: 1095568733}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1742909100, guid: ed7343f30e3843b3afda8f8b02669cea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &762058234981773189 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 762058233928147672, guid: e477844594449984bb78335c3e065238,
