@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 40}
   - component: {fileID: 74}
-  - component: {fileID: 75}
-  - component: {fileID: 76}
-  - component: {fileID: 77}
+  - component: {fileID: 85}
+  - component: {fileID: 87}
+  - component: {fileID: 86}
   m_Layer: 0
   m_Name: PlayerParent
   m_TagString: Untagged
@@ -31,11 +31,44 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 124546170709831921}
+  - {fileID: 124546170709832006}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &74
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e4a19df815cec849854c34cf8f09ba0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  head: {fileID: 124546170709831772}
+  sensitivity: 2
+  sensitivityX: 15
+  sensitivityY: 15
+  minimumY: -60
+  maximumY: 60
+--- !u!114 &85
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b479c8f9b9f7c1499f2c3c028f6bde7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cam: {fileID: 124546170709832257}
+  TrackedPoseDriver: {fileID: 124546170709832500}
+  fpsControlScript: {fileID: 74}
+--- !u!114 &87
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -53,11 +86,11 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   ObservedComponents:
-  - {fileID: 75}
+  - {fileID: 86}
   viewIdField: 0
   InstantiationId: 1
   isRuntimeInstantiated: 0
---- !u!114 &75
+--- !u!114 &86
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -72,39 +105,6 @@ MonoBehaviour:
   m_SynchronizePosition: 1
   m_SynchronizeRotation: 1
   m_SynchronizeScale: 0
---- !u!114 &76
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4b479c8f9b9f7c1499f2c3c028f6bde7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 124546170709831912}
-  TrackedPoseDriver: {fileID: 124546170709831892}
-  fpsControlScript: {fileID: 77}
---- !u!114 &77
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 28}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2e4a19df815cec849854c34cf8f09ba0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  head: {fileID: 124546170709831932}
-  sensitivity: 2
-  sensitivityX: 15
-  sensitivityY: 15
-  minimumY: -60
-  maximumY: 60
 --- !u!1001 &124546170709831933
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -162,13 +162,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 648b65a5704528e4cbe7d776db86ea85, type: 3}
---- !u!4 &124546170709831921 stripped
+--- !u!4 &124546170709832006 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 38, guid: 648b65a5704528e4cbe7d776db86ea85,
     type: 3}
   m_PrefabInstance: {fileID: 124546170709831933}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &124546170709831892 stripped
+--- !u!114 &124546170709832500 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 67, guid: 648b65a5704528e4cbe7d776db86ea85,
     type: 3}
@@ -180,13 +180,13 @@ MonoBehaviour:
   m_Script: {fileID: 1742909100, guid: ed7343f30e3843b3afda8f8b02669cea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &124546170709831932 stripped
+--- !u!1 &124546170709831772 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 29, guid: 648b65a5704528e4cbe7d776db86ea85,
     type: 3}
   m_PrefabInstance: {fileID: 124546170709831933}
   m_PrefabAsset: {fileID: 0}
---- !u!20 &124546170709831912 stripped
+--- !u!20 &124546170709832257 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 46, guid: 648b65a5704528e4cbe7d776db86ea85,
     type: 3}
