@@ -5,7 +5,7 @@ using UnityEngine.SpatialTracking;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class NetworkedPlayer : MonoBehaviourPunCallbacks
+public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Camera cam;
     public TrackedPoseDriver TrackedPoseDriver;
@@ -31,6 +31,23 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks
             fpsControlScript.enabled = true;
         }
         Debug.Log("photonView: " + photonView.IsMine + ", " + TrackedPoseDriver.enabled);
+    }
+
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting && TrackedPoseDriver.enabled)
+        {
+            // We own this player: send the others our data
+            // Send Player object's position, as updated by TrackedPoseDriver
+            stream.SendNext(TrackedPoseDriver.gameObject.transform.position);
+        }
+        else
+        {
+            // Network player, receive data
+            // Set PlayerParent to TrackedPoseDriver's coords
+            transform.position = (Vector3)stream.ReceiveNext();
+            Debug.Log("Updated position to " + transform.position);
+        }
     }
 
     void Update()
