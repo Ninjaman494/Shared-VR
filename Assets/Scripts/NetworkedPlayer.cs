@@ -40,8 +40,9 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunObservable
             // We own this player: send the others our data
             // Send Player object's position, as updated by TrackedPoseDriver
             stream.SendNext(TrackedPoseDriver.gameObject.transform.position);
+            Debug.Log("Sending position");
         }
-        else
+        else if (!stream.IsWriting)
         {
             // Network player, receive data
             // Set PlayerParent to TrackedPoseDriver's coords

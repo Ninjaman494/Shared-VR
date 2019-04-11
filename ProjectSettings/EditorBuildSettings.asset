@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/solo.unity
     guid: 67f75c62e8744b0478ab26c40ba258b9
+  - enabled: 0
+    path: Assets/Photon/PhotonVoice/Demos/DemoVoiceMinimal/DemoVoiceMinimal-Scene.unity
+    guid: 2da9606550d4940d6b7d040e3913bdd8
   m_configObjects: {}
