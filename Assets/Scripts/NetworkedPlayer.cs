@@ -7,7 +7,7 @@ using Photon.Realtime;
 
 public class NetworkedPlayer : MonoBehaviourPunCallbacks
 {
-    public Camera camera;
+    public Camera cam;
     public TrackedPoseDriver TrackedPoseDriver;
     public VRFPSControl fpsControlScript;
 
@@ -18,20 +18,19 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        Debug.Log("photonView: " + photonView);
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             TrackedPoseDriver.enabled = false;
-            camera.enabled = false;
+            cam.enabled = false;
             fpsControlScript.enabled = false;
         }
         else
         {
             TrackedPoseDriver.enabled = true;
-            camera.enabled = true;
+            cam.enabled = true;
             fpsControlScript.enabled = true;
         }
-
+        Debug.Log("photonView: " + photonView.IsMine + ", " + TrackedPoseDriver.enabled);
     }
 
     void Update()

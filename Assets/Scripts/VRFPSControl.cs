@@ -16,13 +16,14 @@ public class VRFPSControl : MonoBehaviour {
     float startingY = 1.125F;
 
     void Update() {
-        // Maintain head position
-        if (Application.platform != RuntimePlatform.WindowsPlayer) {
-            head.transform.Translate(new Vector3(0, startingY, 0));
-        }
-
         if(Application.platform == RuntimePlatform.Android) {
             return;
+        }
+
+        // Maintain head position
+        if (Application.platform != RuntimePlatform.WindowsPlayer)
+        {
+            head.transform.Translate(new Vector3(0, startingY, 0));
         }
 
         float rotationX = head.transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;
