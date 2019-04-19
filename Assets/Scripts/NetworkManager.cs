@@ -5,6 +5,11 @@ using UnityEngine.SpatialTracking;
 using Photon.Pun;
 using Photon.Realtime;
 
+/// NetworkManager handles connecting to the PUN network and 
+/// creating, joining, and leaving the room. Uses one global
+/// room for all users.
+///
+/// author: Akash Eldo (axe1412)
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject playerPrefab;

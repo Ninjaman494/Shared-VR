@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// Script used to provide WASD and mouse controls when on PC.
+/// Also has jump support.
+///
+/// author: Akash Eldo (axe1412)
 public class FPSControl : MonoBehaviour {
 
     public GameObject cam;

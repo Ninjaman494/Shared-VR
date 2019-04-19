@@ -5,6 +5,12 @@ using UnityEngine.SpatialTracking;
 using Photon.Pun;
 using Photon.Realtime;
 
+/// Handles all network related operations needed for the player character.
+/// NetworkedPlayer disables/enables scripts, sends updated character position
+/// to the server, and updates the position based on what was recieved from the
+/// server.
+///
+/// author: Akash Eldo (axe1412)
 public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Camera cam;
@@ -18,12 +24,14 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunObservable
 
     void Start()
     {
+        // If this is the other(networked) player
         if (photonView.IsMine == false && PhotonNetwork.IsConnected == true)
         {
             TrackedPoseDriver.enabled = false;
             cam.enabled = false;
             fpsControlScript.enabled = false;
         }
+        // If this is the local player
         else
         {
             TrackedPoseDriver.enabled = true;
@@ -49,20 +57,5 @@ public class NetworkedPlayer : MonoBehaviourPunCallbacks, IPunObservable
             transform.position = (Vector3)stream.ReceiveNext();
             Debug.Log("Updated position to " + transform.position);
         }
-    }
-
-    void Update()
-    {
-        /* if(photonView.IsMine == true && PhotonNetwork.IsConnected == true)
-        {
-            if(Input.GetKey(KeyCode.D))
-                    gameObject.transform.Translate(Vector3.right * Time.deltaTime * 3f);
-            if(Input.GetKey(KeyCode.A))
-                    gameObject.transform.Translate(Vector3.left * Time.deltaTime * 3f);
-            if(Input.GetKey(KeyCode.S))
-                    gameObject.transform.Translate(Vector3.back * Time.deltaTime * 3f);
-            if(Input.GetKey(KeyCode.W))
-                    gameObject.transform.Translate(Vector3.forward * Time.deltaTime * 3f);
-        } */
     }
 }
